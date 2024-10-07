@@ -6,36 +6,36 @@ const FichaMedica = database.define('FichaMedica', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true
     },
     medicamentos: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
     alergias: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
     cancer: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
     cancer: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
     comorbidades: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
     tipoSanguineo: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
     obs: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
      },
 })
 

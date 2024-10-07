@@ -5,12 +5,12 @@ const Doenca = database.define('Doenca', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true
     },
     doenca: {
        type: Sequelize.STRING,
-       allowNull: false,
+       allowNull: true,
     }
 });
 

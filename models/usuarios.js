@@ -9,60 +9,60 @@ const Usuarios = database.define('Usuarios', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true
     },
     nome: {
        type: Sequelize.STRING,
-       allowNull: false,
+       allowNull: true,
     },
     nascimento: {
        type: Sequelize.DATEONLY,
-       allowNull: false,
+       allowNull: true,
     },
     sexo: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     CPF: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     senha: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     telefonePessoal: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     telefoneEmergencia: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     CEP: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     endereco: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     bairro: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     numero: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
     cidade: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     estado: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
 });
 

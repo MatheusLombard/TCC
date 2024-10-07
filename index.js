@@ -1,5 +1,5 @@
-require('dotenv').config();
 const express = require('express');
+require('dotenv').config();
 const cors = require('cors');
 const database = require('./conexao');
 const Usuarios = require('./models/usuarios');
@@ -56,23 +56,29 @@ app.post('/create/', async (req, res) => {
             }
         });
         await novoUsuario.setDoencas(doencas);  
+
+        res.json('sucesso')
     })
 app.post('/logar/', async (req, res) => {
     const cpfUsuario = req.body.cpf
     const senha = req.body.senha
 
-
-    const verificar = await Usuarios.findOne({
-        where: {
-            [Sequelize.Op.and]:[ {CPF: cpfUsuario}, {senha: senha}] 
-        }
-    })
-    
-    if(verificar){
-        console.log('Usuario encontrado: ', verificar)
+    if(cpfUsuario === 'undefined' || senha === 'undefined'){
+        res.json('Erro')
+    }else{
+        const verificar = await Usuarios.findOne({
+            where: {
+                [Sequelize.Op.and]:[ {CPF: cpfUsuario}, {senha: senha}] 
+            }
+        })
         
-        res.json(verificar);
+        if (verificar) {
+            res.json(verificar);
+        } else {
+            res.json('Erro');
+        }
     }
+
 
 })
 
@@ -124,7 +130,7 @@ app.post('/iniciar-chamada', (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
